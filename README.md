@@ -15,9 +15,10 @@ go get github.com/get-outpost/outpost-go@v0.1.0
 - `client`: token-authenticated HTTP requests and resumable WebSocket streams.
   The only external dependency is `github.com/coder/websocket`.
 
-Canonical providers match herdr agent kinds: `ProviderClaude` (`claude`),
-`ProviderCodex` (`codex`), `ProviderPi` (`pi`), `ProviderOMP` (`omp`), and
-`ProviderOpenCode` (`opencode`). Unknown provider kinds pass through unchanged.
+Outpost owns the provider vocabulary. Canonical providers are `ProviderClaude`
+(`claude`), `ProviderCodex` (`codex`), `ProviderPi` (`pi`), `ProviderOMP`
+(`omp`), and `ProviderOpenCode` (`opencode`). Adapters map their own names to
+these. Unknown providers pass through unchanged.
 
 ## Publish and consume
 

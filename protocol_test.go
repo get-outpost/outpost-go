@@ -15,7 +15,7 @@ func TestProjectionPayloadsRemainLenient(t *testing.T) {
 		outpost.NotificationCreated, "custom.future", "command.future",
 	} {
 		t.Run(kind, func(t *testing.T) {
-			for _, payload := range []string{"", `{}`, `{"provider":"unknown-herdr-kind","status":"unknown","approval_id":123,"decision":[],"title":null,"unknown":true}`} {
+			for _, payload := range []string{"", `{}`, `{"provider":"unknown-provider","status":"unknown","approval_id":123,"decision":[],"title":null,"unknown":true}`} {
 				e := outpost.Event{Type: kind, SessionID: "s", Payload: json.RawMessage(payload)}
 				if err := e.Validate(); err != nil {
 					t.Fatalf("projection payload %q rejected: %v", payload, err)

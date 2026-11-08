@@ -53,8 +53,9 @@ const (
 // IsCommand reports whether kind belongs to the command namespace, including unknown commands.
 func IsCommand(kind string) bool { return strings.HasPrefix(kind, "command.") }
 
-// Canonical provider identifiers describe known harnesses. Unknown herdr kinds
-// pass through unchanged; providers are not validated as a closed enumeration.
+// Canonical provider identifiers describe known agents. Outpost owns this
+// vocabulary; adapters map their own names to it. Unknown providers pass
+// through unchanged; providers are not validated as a closed enumeration.
 const (
 	// ProviderClaude identifies Claude Code.
 	ProviderClaude = "claude"
